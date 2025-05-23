@@ -1,0 +1,141 @@
+.place {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "title artist" "image description" "button description";
+  grid-gap: 48px 40px;
+  padding-bottom: 80px;
+}
+
+.place__title {
+  grid-area: title;
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 76px;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.place__image {
+  grid-area: image;
+  box-shadow: 10px 10px 25px 0px #00000080;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+}
+
+.place__button {
+  grid-area: button;
+  border-radius: 4px;
+  padding: 13px 16px;
+  gap: 10px;
+  background: linear-gradient(90deg, #0278fe 0%, #003a7b 99.98%);
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: white;
+  height: max-content;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.place__button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 120, 254, 0.25) 0%,
+    rgba(0, 58, 123, 0.25) 99.98%
+  );
+}
+
+.place__artist {
+  grid-area: artist;
+  align-self: flex-end;
+}
+
+.place__artist-heading {
+  width: 58px;
+  height: 15px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  margin: 0 0 8px 0;
+}
+
+.place__artist-name {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0;
+  color: #ffffff;
+  margin: 0;
+}
+
+.place__description {
+  grid-area: description;
+}
+
+.place__description-paragraph {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 163%;
+  letter-spacing: 0;
+  margin: 25px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .place {
+    grid-template-areas: "title" "artist" "image" "description" "button";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 72px;
+  }
+  .place__artist {
+    align-self: auto;
+  }
+  .place__title {
+    font-size: 42px;
+    margin: 0 16px;
+    line-height: 46px;
+  }
+  .place__description {
+    margin: 0 16px;
+  }
+  .place__description-paragraph {
+    font-size: 16px;
+    margin: 25px 0 0;
+  }
+  .place__button {
+    margin: 0 16px;
+    width: fit-content;
+  }
+  .place__artist {
+    margin: 0 16px;
+  }
+  .place__artist-heading {
+    margin-bottom: 12px;
+    line-height: 15px;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .place {
+    gap: 50px;
+  }
+  .place__title {
+    font-size: 32px;
+    margin: 0 16px;
+  }
+  .place__button {
+    font-size: 14px;
+  }
+}
